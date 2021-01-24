@@ -1,0 +1,59 @@
+Package: BDD
+Type: Package
+Title: Duplicate Detection Using a Bayesian Partitioning Approach
+Version: 0.2.0
+Date: 2021-01-24
+Authors@R: c(
+    person(given = "Neil", 
+           family = "Marchant", 
+           email = "ngmarchant@gmail.com", 
+           role = c("aut", "cre")),
+    person(given = "Rebecca",
+           family = "Steorts", 
+           email = "beka@stat.duke.edu",
+           role = "aut"),
+    person(given = "Benjamin",
+           family = "Rubinstein", 
+           email = "brubinstein@unimelb.edu.au", 
+           role = "aut"))
+Maintainer: Neil Marchant <ngmarchant@gmail.com>
+URL: https://github.com/cleanzr/BDD
+BugReports: https://github.com/cleanzr/BDD/issues
+Description: An implementation of the Bayesian duplicate detection model 
+    proposed by Sadinle (2014) <DOI:10.1214/14-AOAS779>. It resembles the 
+    classic model of Fellegi & Sunter (1969) 
+    <DOI:10.1080/01621459.1969.10501049>, but targets a partitioning of the 
+    records, rather than pairwise match predictions. Inference is conducted 
+    using a Gibbs sampler implemented in C++.
+License: GPL (>= 2)
+Depends: R (>= 3.0.2)
+Imports: Rcpp (>= 0.12.12),
+    coda (>= 0.17-1),
+    methods,
+    mcmcse (>= 1.4),
+    progress (>= 1.2.2),
+    fuzzyjoin (>= 0.1.6)
+Suggests: knitr,
+    rmarkdown,
+    comparator (>= 0.1.1),
+    magrittr (>= 1.5),
+    clevr (>= 0.1.1)
+LinkingTo: Rcpp, 
+    RcppProgress, 
+    BH (>= 1.69.0)
+RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
+VignetteBuilder: knitr
+LazyData: true
+Collate: 
+    'BDD-package.R'
+    'utils.R'
+    'BDDModel.R'
+    'BDDFit.R'
+    'RcppExports.R'
+    'data.R'
+    'extract.R'
+    'indexing.R'
+    'run_inference.R'
+    'scoring.R'
